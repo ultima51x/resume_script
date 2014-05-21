@@ -10,10 +10,10 @@
 
 <sec name="Experience" desc="">
 	<!-- CLICC -->
-  <loc value="UCLA College Library Instructional Computing Commons" city="Los Angeles, CA">
+	<loc value="UCLA College Library Instructional Computing Commons" city="Los Angeles, CA">
 		<pos value="Programming Specialist" date="September 2010 - August 2012">
-      <desc type="">Implementing a RESTful web service with Java and JAX-RS for the purposes of listing availability and submitting reservations for group study rooms and classrooms.</desc>
-      <desc type="">Maintaining several websites including an outfacing informational public site, an internal staff site, and a web application for reserving group study rooms within the library.</desc>
+			<desc type="">Implementing a RESTful web service with Java and JAX-RS for the purposes of listing availability and submitting reservations for group study rooms and classrooms.</desc>
+			<desc type="">Maintaining several websites including an outfacing informational public site, an internal staff site, and a web application for reserving group study rooms within the library.</desc>
 			<desc type="">Developed a PHP web application for helpdesk staff to visualize where devices are located.</desc>
 		</pos>
 		<pos value="Laptop Administrative and Technical Assistant" date="June 2009 - January 2010">
@@ -29,10 +29,10 @@
 	</loc>
 	<!-- HP -->
 	<loc value="Hewlett-Packard Company" city="San Diego, CA">
-    <pos value="Intern" date="June 2011 - September 2011">
-      <desc type="">Assisted in development of the HP Wall Art project which runs on Ruby on Rails.</desc> 
-      <desc type="inner">Improved usability of the project's internal admin site/CMS by implementing batch upload of large files and AJAX-driven user interfaces.</desc>
-      <desc type="inner">Performed other tasks such as adding new functionality to an internal admin site, investigating the use of OAuth to integrate the project with outside sites, and fixing miscellaneous bugs.</desc>
+		<pos value="Intern" date="June 2011 - September 2011">
+			<desc type="">Assisted in development of the HP Wall Art project which runs on Ruby on Rails.</desc> 
+			<desc type="inner">Improved usability of the project's internal admin site/CMS by implementing batch upload of large files and AJAX-driven user interfaces.</desc>
+			<desc type="inner">Performed other tasks such as adding new functionality to an internal admin site, investigating the use of OAuth to integrate the project with outside sites, and fixing miscellaneous bugs.</desc>
 		</pos>
 	</loc>
 	<!-- Zobrist -->
@@ -50,9 +50,11 @@
 		</pos>
 	</loc>
 </sec>
+<space />
 
 <sec name="Skills" desc="Prior experience with Ruby, C, C++, C, Java, PHP, SQL, jQuery, Python and MATLAB. Capable with Microsoft Windows, GNU/Linux, and Mac OS X.">
 </sec>
+<space />
 
 <sec name="Education" desc="">
 	<loc value="University of California, Los Angeles" city="Los Angeles, CA">
@@ -69,14 +71,14 @@
 <space />
 
 <sec name="Projects" desc="">
-  <pos value="Intelligent Switching between ZeroMQ and TCP/IP for Data Streams" date="December 2011 - March 2012">
+	<pos value="Intelligent Switching between ZeroMQ and TCP/IP for Data Streams" date="December 2011 - March 2012">
 		<desc type="">Experimented with Unix socket programming and an alternative sockets library (ZeroMQ) to improve network throughput for data streams. Final project for M.S. degree.</desc>
 	</pos>
 	<pos value="Anisotropic Diffusion of Hyperspectral Imagery" date="March 2009 - June 2009">
 		<desc type="">Studied the effects of applying certain differential equations upon images for image segmentation.</desc>
 	</pos>
 	<pos value="Video Tracking" date="July 2007 - September 2007">
-    <desc type="">Implemented an adaptive foreground detection algorithm for video in a group summer research project at UCLA Mathematics, using MATLAB and C++ with the OpenCV computer vision library.</desc>
+		<desc type="">Implemented an adaptive foreground detection algorithm for video in a group summer research project at UCLA Mathematics, using MATLAB and C++ with the OpenCV computer vision library.</desc>
 	</pos>
 </sec>
 
