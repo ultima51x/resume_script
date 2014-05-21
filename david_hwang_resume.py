@@ -3,6 +3,7 @@
 
 import sys
 import xml.parsers.expat
+import os
 
 # handler functions for text
 def txt_start_element(name, attrs):
@@ -30,7 +31,7 @@ def txt_end_element(name):
 def txt_char_data(data):
     if data[0] == '\n' or data[0] == "\t" or data[0] == ' ': pass
     else: print data
-    
+
 # Handler functions for html
 def html_start_element(name, attrs):
     if name == "name": print "<h1>",
@@ -38,7 +39,7 @@ def html_start_element(name, attrs):
         print "<h2>" + attrs["name"] + "</h2>"
         if attrs["desc"] == "": pass
         else: print "<p>" + attrs["desc"] + "</p>"
-    elif name == "loc": 
+    elif name == "loc":
         print "<h3>" + attrs["value"], "-", attrs["city"] + "</h3>"
     elif name == "pos":
         print "<h4>" + attrs["value"], "(" + attrs["date"] + ")" "</h4>"
@@ -62,12 +63,12 @@ def html_char_data(data):
 def tex_start_element(name, attrs):
     #header
     if name == "root":
-        print """% LaTeX file for resume 
+        print """% LaTeX file for resume
 % This file uses the resume document class (res.cls)
 
 \documentclass[margin]{res}
 %\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font 
+%\usepackage{newcent}   % uses new century schoolbook postscript font
 %\\newsectionwidth{0pt}  % So the text is not indented under section headings
 %\\usepackage{fancyhdr}  % use this package to get a 2 line header
 %\\renewcommand{\headrulewidth}{0pt} % suppress line drawn by default by fancyhdr
@@ -103,7 +104,7 @@ def tex_start_element(name, attrs):
             print "\item",
     elif name == "space":
         print "\\vspace {+10pt}"
-    
+
 def tex_end_element(name):
     if name in ("name","address1","phone","email"): print "\\\\",
     elif name in ("address2","website"):
@@ -127,35 +128,35 @@ def char_data(data):
     print 'Character data:', repr(data)
 
 # Main function for setting up parser handlers and input/output
-def main():    
-    sys.stdout = open("../david_hwang_resume.txt",'w')    
+def main():
+    sys.stdout = open("./output/david_hwang_resume.txt",'w')
     p1 = xml.parsers.expat.ParserCreate()
     p1.StartElementHandler = txt_start_element
     p1.EndElementHandler = txt_end_element
     p1.CharacterDataHandler = txt_char_data
     p1.Parse(open("./david_hwang_resume.xml",'r').read())
 
-    sys.stdout = open("../david_hwang_resume.html",'w')    
+    sys.stdout = open("./output/david_hwang_resume.html",'w')
     p2 = xml.parsers.expat.ParserCreate()
     p2.StartElementHandler = html_start_element
     p2.EndElementHandler = html_end_element
     p2.CharacterDataHandler = html_char_data
     p2.Parse(open("./david_hwang_resume.xml",'r').read())
 
-    sys.stdout = open("../david_hwang_resume.tex",'w')    
+    sys.stdout = open("./output/david_hwang_resume.tex",'w')
     p3 = xml.parsers.expat.ParserCreate()
     p3.StartElementHandler = tex_start_element
     p3.EndElementHandler = tex_end_element
     p3.CharacterDataHandler = tex_char_data
     p3.Parse(open("./david_hwang_resume.xml",'r').read())
 
-    sys.stdout = open("../debug_output",'w')    
+    sys.stdout = open("./output/debug_output",'w')
     p4 = xml.parsers.expat.ParserCreate()
     p4.StartElementHandler = start_element
     p4.EndElementHandler = end_element
     p4.CharacterDataHandler = char_data
     p4.Parse(open("./david_hwang_resume.xml",'r').read())
-    
+
 if __name__ == "__main__":
-    main()    
-        
+    main()
+
