@@ -8,32 +8,10 @@
 <email>d.hw4ng@gmail.com</email>
 <website></website>
 
-<!--
-<sec name="Objective" desc="Seeking full-time employment within software development after graduation from school.">
-</sec>
--->
-
-<sec name="Education" desc="">
-	<loc value="University of California, Los Angeles" city="Los Angeles, CA">
-		<pos value="M.S., Computer Science" date="September 2010 - March 2012">
-			<desc type="">Overall GPA: 3.933.</desc>
-			<desc type="">Relevant Coursework: Advanced Operating Systems, Computer Systems Architecture, Data Mining, Databases and Knowledge Bases, Web Information Systems, Computer Security</desc>
-		</pos>
-		<pos value="B.S., Mathematics of Computation" date="September 2005 - June 2009">
-			<desc type="">Overall GPA: 3.554.</desc>
-			<desc type="">Relevant Coursework: Algorithms and Complexity, Programming Languages, Operating Systems Principles, Database Systems, Software Engineering, Networking</desc>
-		</pos>
-	</loc>
-</sec>
-<space />
-
-<sec name="Skills" desc="Prior experience with Ruby, C, C++, C, Java, PHP, SQL, jQuery, Python and MATLAB. Capable with Microsoft Windows, GNU/Linux, and Mac OS X.">
-</sec>
-
 <sec name="Experience" desc="">
 	<!-- CLICC -->
   <loc value="UCLA College Library Instructional Computing Commons" city="Los Angeles, CA">
-		<pos value="Programming Specialist" date="September 2010 - present">
+		<pos value="Programming Specialist" date="September 2010 - August 2012">
       <desc type="">Implementing a RESTful web service with Java and JAX-RS for the purposes of listing availability and submitting reservations for group study rooms and classrooms.</desc>
       <desc type="">Maintaining several websites including an outfacing informational public site, an internal staff site, and a web application for reserving group study rooms within the library.</desc>
 			<desc type="">Developed a PHP web application for helpdesk staff to visualize where devices are located.</desc>
@@ -73,6 +51,23 @@
 	</loc>
 </sec>
 
+<sec name="Skills" desc="Prior experience with Ruby, C, C++, C, Java, PHP, SQL, jQuery, Python and MATLAB. Capable with Microsoft Windows, GNU/Linux, and Mac OS X.">
+</sec>
+
+<sec name="Education" desc="">
+	<loc value="University of California, Los Angeles" city="Los Angeles, CA">
+		<pos value="M.S., Computer Science" date="September 2010 - March 2012">
+			<desc type="">Overall GPA: 3.933.</desc>
+			<desc type="">Relevant Coursework: Advanced Operating Systems, Computer Systems Architecture, Data Mining, Databases and Knowledge Bases, Web Information Systems, Computer Security</desc>
+		</pos>
+		<pos value="B.S., Mathematics of Computation" date="September 2005 - June 2009">
+			<desc type="">Overall GPA: 3.554.</desc>
+			<desc type="">Relevant Coursework: Algorithms and Complexity, Programming Languages, Operating Systems Principles, Database Systems, Software Engineering, Networking</desc>
+		</pos>
+	</loc>
+</sec>
+<space />
+
 <sec name="Projects" desc="">
   <pos value="Intelligent Switching between ZeroMQ and TCP/IP for Data Streams" date="December 2011 - March 2012">
 		<desc type="">Experimented with Unix socket programming and an alternative sockets library (ZeroMQ) to improve network throughput for data streams. Final project for M.S. degree.</desc>
@@ -84,7 +79,6 @@
     <desc type="">Implemented an adaptive foreground detection algorithm for video in a group summer research project at UCLA Mathematics, using MATLAB and C++ with the OpenCV computer vision library.</desc>
 	</pos>
 </sec>
-<space />
 
 </root>
 
