@@ -9,11 +9,21 @@
 <website></website>
 
 <sec name="Experience" desc="">
+	<!-- Smartify -->
+	<loc value="Smartify, Inc." city="Pasadena, CA">
+		<pos value="Software Engineer" date="August 2012 - Present">
+			<desc type="">Programming, testing, debugging, and maintenance of a software stack that includes Ruby on Rails, MySQL, MongoDB, RabbitMQ, Redis, and Amazon Redshift.  This platform runs promotions and sweepstakes for public-facing brands such as Universal Entertainment and Redbox.</desc> 
+			<desc type="inner">Developed features for a public-facing widget, a client-facing admin website, and internal configuration tools, all using Ruby on Rails.</desc>
+			<desc type="inner">Implemented an analytics workflow which processes data gathered by the platform. Redshift is used for data warehousing, Amazon ElasticMapReduce is used for bulk import to/export from Redshift, and Amazon EC2 runs scripts that manage the workflow.</desc>
+			<desc type="inner">Automated retrieval of Facebook likes data from 50K platform users a day via Facebook's Graph API.</desc>
+			<desc type="inner">Resolved various database-related performance issues, such as high cpu utilization or slow querie(s).</desc>
+		</pos>
+	</loc>
 	<!-- CLICC -->
 	<loc value="UCLA College Library Instructional Computing Commons" city="Los Angeles, CA">
 		<pos value="Programming Specialist" date="September 2010 - August 2012">
-			<desc type="">Implementing a RESTful web service with Java and JAX-RS for the purposes of listing availability and submitting reservations for group study rooms and classrooms.</desc>
-			<desc type="">Maintaining several websites including an outfacing informational public site, an internal staff site, and a web application for reserving group study rooms within the library.</desc>
+			<desc type="">Implemented a RESTful web service with Java and JAX-RS for the purposes of listing availability and submitting reservations for group study rooms and classrooms.</desc>
+			<desc type="">Maintained several websites including an outfacing informational public site, an internal staff site, and a web application for reserving group study rooms within the library.</desc>
 			<desc type="">Developed a PHP web application for helpdesk staff to visualize where devices are located.</desc>
 		</pos>
 		<pos value="Laptop Administrative and Technical Assistant" date="June 2009 - January 2010">
@@ -46,15 +56,13 @@
 	<!-- Reader -->
 	<loc value="UCLA Department of Mathematics" city="Los Angeles, CA">
 		<pos value="Reader" date="January 2007 - June 2007">
-			<desc type="">Graded assignments for PIC 10A (Winter 2007) and Math 32B (Spring 2007).</desc>
+			<desc type="">Graded assignments for introductory C++ (PIC 10A) and multivariable calculus (Math 32B).</desc>
 		</pos>
 	</loc>
 </sec>
-<space />
 
-<sec name="Skills" desc="Prior experience with Ruby, C, C++, C, Java, PHP, SQL, jQuery, Python and MATLAB. Capable with Microsoft Windows, GNU/Linux, and Mac OS X.">
+<sec name="Skills" desc="Proficient in Ruby/Ruby on Rails and SQL. Familiar with C, C++, Java, JavaScript, Python, PHP and MATLAB. Operating systems used include Microsoft Windows, GNU/Linux, and Mac OS X.">
 </sec>
-<space />
 
 <sec name="Education" desc="">
 	<loc value="University of California, Los Angeles" city="Los Angeles, CA">
@@ -68,7 +76,6 @@
 		</pos>
 	</loc>
 </sec>
-<space />
 
 <sec name="Projects" desc="">
 	<pos value="Intelligent Switching between ZeroMQ and TCP/IP for Data Streams" date="December 2011 - March 2012">
