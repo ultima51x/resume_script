@@ -47,8 +47,12 @@ class TexPrinter:
                 print "\item[$\circ$]",
             else:
                 print "\item",
+        elif name == "text":
+            print "{\\bf", attrs["header"] + ":} ",
         elif name == "space":
             print "\\vspace {+10pt}"
+        elif name == "br":
+            print "\\\\"
 
         if data is None or data[0] == '\n' or data[0] == "\t" or data[0] == ' ': pass
         else: print data,
@@ -82,6 +86,8 @@ class TextPrinter:
             print attrs["value"].upper()
             print attrs["city"]
             print
+        elif name == "text":
+            print attrs["header"] + "\t",
         elif name == "pos":
             print attrs["value"]
             print "(" + attrs["date"] + ")",
@@ -113,6 +119,8 @@ class HtmlPrinter:
             print "<h4>" + attrs["value"], "(" + attrs["date"] + ")" "</h4>"
             print "<ul>"
         elif name == "desc": print "<li>",
+        elif name == "text": print "<strong>" + attrs["header"] + ":</strong>",
+        elif name == "br": print "<br/>"
 
         if data is None or data[0] == '\n' or data[0] == "\t" or data[0] == ' ': pass
         else: print data,
