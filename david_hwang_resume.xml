@@ -30,10 +30,10 @@
 			<desc type="">Assisted in overseeing laptop lending operations, consisting of about 200 Apple MacBook laptops.</desc>
 			<desc type="">Supervised and trained five student helpdesk workers with the goal of maintaining hardware in student computer labs and laptop lending operations.</desc>
 		</pos>
-		<pos value="Student Helpdesk Specialist" date="July 2008 - June 2009">
+		<pos value="Student Helpdesk Specialist" date="July 2008 - June 2009" skip="true">
 			<desc type="">Maintained hardware in student computer labs of about 160 desktop computers and 11 printers.</desc>
 		</pos>
-		<pos value="Consultant" date="September 2007 - June 2008">
+		<pos value="Consultant" date="September 2007 - June 2008" skip="true">
 			<desc type="">Proctored student computer labs; troubleshooted PC and Mac problems; provided customer service.</desc>
 		</pos>
 	</loc>
@@ -61,7 +61,10 @@
 	</loc>
 </sec>
 
-<sec name="Skills" desc="Proficient in Ruby/Ruby on Rails and SQL. Familiar with C, C++, Java, JavaScript, Python, PHP and MATLAB. Operating systems used include Microsoft Windows, GNU/Linux, and Mac OS X.">
+<sec name="Skills" desc="">
+	<text header="Languages">Proficient in Ruby/Ruby on Rails and SQL. Prior experience with C, Java, C++, JavaScript, PHP, Python, and MATLAB.</text>
+	<br/>
+	<text header="Software">GNU/Linux, Mac OS X, Git, MySQL, MongoDB, Hive, and Apache Solr.</text>
 </sec>
 
 <sec name="Education" desc="">
@@ -82,7 +85,7 @@
 		<desc type="">Experimented with Unix socket programming and an alternative sockets library (ZeroMQ) to improve network throughput for data streams. Final project for M.S. degree.</desc>
 	</pos>
 	<pos value="Anisotropic Diffusion of Hyperspectral Imagery" date="March 2009 - June 2009">
-		<desc type="">Studied the effects of applying certain differential equations upon images for image segmentation.</desc>
+		<desc type="">Studied the effects of applying certain differential equations upon images for image segmentation using MATLAB.</desc>
 	</pos>
 	<pos value="Video Tracking" date="July 2007 - September 2007">
 		<desc type="">Implemented an adaptive foreground detection algorithm for video in a group summer research project at UCLA Mathematics, using MATLAB and C++ with the OpenCV computer vision library.</desc>
