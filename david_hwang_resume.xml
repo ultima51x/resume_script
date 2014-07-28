@@ -23,9 +23,9 @@
 	<!-- CLICC -->
 	<loc value="UCLA College Library Instructional Computing Commons" city="Los Angeles, CA">
 		<pos value="Programming Specialist" date="September 2010 - August 2012">
-			<desc type="">Implemented a RESTful web service with Java and JAX-RS for the purposes of listing availability and submitting reservations for group study rooms and classrooms.</desc>
-			<desc type="">Maintained several websites including an outfacing informational public site, an internal staff site, and a web application for reserving group study rooms within the library.</desc>
-			<desc type="">Developed a PHP web application for helpdesk staff to visualize where devices are located.</desc>
+			<desc type="">Implemented a RESTful web service with Java/JAX-RS which manages study room reservations.</desc>
+			<desc type="">Developed a PHP web application for IT helpdesk staff to visualize where devices are located.</desc>
+			<desc type="">Maintained several PHP web applications, including an outfacing informational public website, an internal staff website, and a tool to reserve group study rooms.</desc>
 		</pos>
 		<pos value="Laptop Administrative and Technical Assistant" date="June 2009 - January 2010">
 			<desc type="">Assisted in overseeing laptop lending operations, consisting of about 200 Apple MacBook laptops.</desc>
@@ -41,17 +41,14 @@
 	<!-- HP -->
 	<loc value="Hewlett-Packard Company" city="San Diego, CA">
 		<pos value="Intern" date="June 2011 - September 2011">
-			<desc type="">Assisted in development of the HP Wall Art project which runs on Ruby on Rails.</desc> 
-			<desc type="inner">Improved usability of the project's internal admin site/CMS by implementing batch upload of large files and AJAX-driven user interfaces.</desc>
-			<desc type="inner">Performed other tasks such as adding new functionality to an internal admin site, investigating the use of OAuth to integrate the project with outside sites, and fixing miscellaneous bugs.</desc>
+			<desc type="">Improved usability of HP Wall Art's internal site/CMS by implementing batch upload of large files (upwards of 50MB) and AJAX-driven user interfaces, using Ruby on Rails and HTML5 File API.</desc>
+			<desc type="">Set up an OAuth provider and added RESTful endpoints for an API intended for third-party eCommerce integrations with HP Wall Art.</desc>
 		</pos>
 	</loc>
 	<!-- Zobrist -->
 	<loc value="Zobrist Consulting Group, Inc." city="Van Nuys, CA">
 		<pos value="Intern" date="June 2010 - September 2010">
-			<desc type="">Developed a prototype of an e-commerce search solution using the Apache Solr search platform.</desc>
-			<desc type="inner">Created a product search page featuring auto-complete and faceted navigation using a JavaScript frontend to interface with Apache Solr.</desc>
-			<desc type="inner">Configured Apache Solr to support faceted navigation by category, to provide spellcheck suggestions, and to automatically index the contents of an IBM WebSphere Commerce database.</desc>
+			<desc type="look above">Developed a fully-functional prototype of an e-commerce product search page using the Apache Solr search platform and AJAX, supporting multi-tier faceted navigation by category, search bar autocomplete, and spellchecking.</desc>
 		</pos>
 	</loc>
 	<!-- Reader -->
