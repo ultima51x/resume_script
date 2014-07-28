@@ -13,11 +13,14 @@
 	<!-- Smartify -->
 	<loc value="Smartify, Inc." city="Pasadena, CA">
 		<pos value="Software Engineer" date="August 2012 - Present">
-			<desc type="">Programming, testing, debugging, and maintenance of a software stack that includes Ruby on Rails, MySQL, MongoDB, RabbitMQ, Redis, and Amazon Redshift.  This platform runs promotions and sweepstakes for public-facing brands such as Universal Entertainment and Redbox.</desc> 
-			<desc type="inner">Developed features for a public-facing widget, a client-facing admin website, and internal configuration tools, all using Ruby on Rails.</desc>
-			<desc type="inner">Implemented an analytics workflow which processes data gathered by the platform. Redshift is used for data warehousing, Amazon ElasticMapReduce is used for bulk import to/export from Redshift, and Amazon EC2 runs scripts that manage the workflow.</desc>
-			<desc type="inner">Automated retrieval of Facebook likes data from 50K platform users a day via Facebook's Graph API.</desc>
-			<desc type="inner">Resolved various database-related performance issues, such as high cpu utilization or slow querie(s).</desc>
+			<desc type="">Developed features, wrote tests, debugged, maintained a promotions/sweepstakes platform consisting of a public-facing widget, an analytics dashboard, and internal configuration tools (all using Ruby on Rails).</desc>
+			<desc type="">Implemented an analytics workflow which processes 100M+ rows of data gathered from promotions/sweepstakes using Amazon Redshift and Elastic MapReduce.</desc>
+			<desc type="">??? Widget Refactoring + AJAX</desc>
+			<desc type="">??? Authentication schemes</desc>
+			<desc type="">??? HubSpot integration, mailing list integrations</desc>
+			<desc type="">??? Dev ops type of stuff</desc>
+			<desc type="">Automated retrieval of Facebook likes data from 50K platform users a day via Facebook's Graph API.</desc>
+			<desc type="">Resolved web application performance issues including high database cpu utilization, slow query performance, and slow web server response times.</desc>
 		</pos>
 	</loc>
 	<!-- CLICC -->
