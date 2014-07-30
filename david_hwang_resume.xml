@@ -13,14 +13,14 @@
 	<!-- Smartify -->
 	<loc value="Smartify, Inc." city="Pasadena, CA">
 		<pos value="Software Engineer" date="August 2012 - Present">
-			<desc type="">Developed features, wrote tests, debugged, maintained a promotions/sweepstakes platform consisting of a public-facing widget, an analytics dashboard, and internal configuration tools (all using Ruby on Rails).</desc>
+			<desc type="">Developed features for, debugged, and maintained a promotions/sweepstakes platform on Ruby on Rails; it has a public-facing widget, an analytics dashboard, and internal configuration tools.</desc>
 			<desc type="">Implemented an analytics workflow which processes 100M+ rows of data gathered from promotions/sweepstakes using Amazon Redshift and Elastic MapReduce.</desc>
-			<desc type="">??? Widget Refactoring + AJAX</desc>
-			<desc type="">??? Authentication schemes</desc>
-			<desc type="">??? HubSpot integration, mailing list integrations</desc>
-			<desc type="">??? Dev ops type of stuff</desc>
-			<desc type="">Automated retrieval of Facebook likes data from 50K platform users a day via Facebook's Graph API.</desc>
-			<desc type="">Resolved web application performance issues including high database cpu utilization, slow query performance, and slow web server response times.</desc>
+			<desc type="">Resolved web application performance issues including high database cpu utilization, slow query performance, and slow response times.</desc>
+			<desc type="">Reworked the promotions/sweepstakes widget code to be modular and to use AJAX.</desc>
+			<desc type="">Configured and deployed an internal configuration application using AWS OpsWorks and Chef.</desc>
+			<desc type="">Automated retrieval of Facebook likes data from 50K users/day via Facebook Graph API.</desc>
+			<desc skip="true" type="">Integrated platform with email services such as CheetahMail.</desc>
+			<desc skip="true" type="">Refactored authentication logic and added authentication via Google Plus, Instagram, and Tumblr.</desc>
 		</pos>
 	</loc>
 	<!-- CLICC -->
@@ -51,7 +51,8 @@
 	<!-- Zobrist -->
 	<loc value="Zobrist Consulting Group, Inc." city="Van Nuys, CA">
 		<pos value="Intern" date="June 2010 - September 2010">
-			<desc type="look above">Developed a fully-functional prototype of an e-commerce product search page using the Apache Solr search platform and AJAX, supporting multi-tier faceted navigation by category, search bar autocomplete, and spellchecking.</desc>
+			<desc type="">Developed a fully-functional prototype of an e-commerce product search page using the Apache Solr search platform and AJAX, supporting multi-tier faceted navigation by category, search bar autocomplete, and spellchecking.</desc>
+			<desc type="">Configured Apache Solr to sensibly index and query the contents of a typical IBM WebSphere Commerce database.</desc>
 		</pos>
 	</loc>
 	<!-- Reader -->
