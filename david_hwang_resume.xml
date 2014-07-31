@@ -13,12 +13,12 @@
 	<!-- Smartify -->
 	<loc value="Smartify, Inc." city="Pasadena, CA">
 		<pos value="Software Engineer" date="August 2012 - Present">
-			<desc type="">Developed features for, debugged, and maintained a promotions/sweepstakes platform on Ruby on Rails; it has a public-facing widget, an analytics dashboard, and internal configuration tools.</desc>
-			<desc type="">Implemented an analytics workflow which processes 100M+ rows of data gathered from promotions/sweepstakes using Amazon Redshift and Elastic MapReduce.</desc>
-			<desc type="">Resolved web application performance issues including high database cpu utilization, slow query performance, and slow response times.</desc>
-			<desc type="">Reworked the promotions/sweepstakes widget code to be modular and to use AJAX.</desc>
+			<desc type="">Developed features for, wrote tests for, debugged, and maintained a web sweepstakes platform using Ruby on Rails, including a widget, an analytics dashboard, and internal configuration tools.</desc>
+			<desc type="">Implemented an analytics workflow which processes 100M+ rows of data gathered from sweepstakes using Amazon Redshift and Amazon Elastic MapReduce.</desc>
 			<desc type="">Configured and deployed an internal configuration application using AWS OpsWorks and Chef.</desc>
+			<desc type="">Resolved performance issues such as high database cpu usage, slow queries, and high response times.</desc>
 			<desc type="">Automated retrieval of Facebook likes data from 50K users/day via Facebook Graph API.</desc>
+			<desc type="">Reworked the web sweepstakes widget code to be more modular and to use AJAX.</desc>
 			<desc skip="true" type="">Integrated platform with email services such as CheetahMail.</desc>
 			<desc skip="true" type="">Refactored authentication logic and added authentication via Google Plus, Instagram, and Tumblr.</desc>
 		</pos>
@@ -26,13 +26,13 @@
 	<!-- CLICC -->
 	<loc value="UCLA College Library Instructional Computing Commons" city="Los Angeles, CA">
 		<pos value="Programming Specialist" date="September 2010 - August 2012">
-			<desc type="">Implemented a RESTful web service with Java/JAX-RS which manages study room reservations.</desc>
+			<desc type="">Implemented a Java/JAX-RS REST web service which manages group study room reservations.</desc>
 			<desc type="">Developed a PHP web application for IT helpdesk staff to visualize where devices are located.</desc>
 			<desc type="">Maintained several PHP web applications, including an outfacing informational public website, an internal staff website, and a tool to reserve group study rooms.</desc>
 		</pos>
 		<pos value="Laptop Administrative and Technical Assistant" date="June 2009 - January 2010">
 			<desc type="">Assisted in overseeing laptop lending operations, consisting of about 200 Apple MacBook laptops.</desc>
-			<desc type="">Supervised and trained five student helpdesk workers with the goal of maintaining hardware in student computer labs and laptop lending operations.</desc>
+			<desc type="">Supervised and trained five student helpdesk workers to assist me and other IT helpdesk staff.</desc>
 		</pos>
 		<pos value="Student Helpdesk Specialist" date="July 2008 - June 2009" skip="true">
 			<desc type="">Maintained hardware in student computer labs of about 160 desktop computers and 11 printers.</desc>
@@ -44,15 +44,16 @@
 	<!-- HP -->
 	<loc value="Hewlett-Packard Company" city="San Diego, CA">
 		<pos value="Intern" date="June 2011 - September 2011">
-			<desc type="">Improved usability of HP Wall Art's internal site/CMS by implementing batch upload of large files (upwards of 50MB) and AJAX-driven user interfaces, using Ruby on Rails and HTML5 File API.</desc>
-			<desc type="">Set up an OAuth provider and added RESTful endpoints for an API intended for third-party eCommerce integrations with HP Wall Art.</desc>
+			<desc type="">Improved usability of HP Wall Art's internal site/CMS by implementing batch upload of large files (upwards of 50MB) and AJAX-driven user interfaces with Ruby on Rails and HTML5.</desc>
+			<desc type="">Set up an OAuth provider and implemented endpoints of a REST API for HP Wall Art, with the intention to integrate with third-party eCommerce companies.</desc>
+			<desc type="">Performed other tasks including adding new functionality to the internal site/CMS, writing tests, and fixing miscellaneous bugs.</desc>
 		</pos>
 	</loc>
 	<!-- Zobrist -->
 	<loc value="Zobrist Consulting Group, Inc." city="Van Nuys, CA">
 		<pos value="Intern" date="June 2010 - September 2010">
-			<desc type="">Developed a fully-functional prototype of an e-commerce product search page using the Apache Solr search platform and AJAX, supporting multi-tier faceted navigation by category, search bar autocomplete, and spellchecking.</desc>
-			<desc type="">Configured Apache Solr to sensibly index and query the contents of a typical IBM WebSphere Commerce database.</desc>
+			<desc type="">Developed a fully-functional prototype of an e-commerce product search page using Apache Solr and AJAX; it supports faceted navigation, autocomplete, and spellchecking.</desc>
+			<desc type="">Configured Apache Solr to sensibly index and query the contents of a typical IBM WebSphere Commerce database, such that the prototype could support the features listed above.</desc>
 		</pos>
 	</loc>
 	<!-- Reader -->
@@ -64,9 +65,9 @@
 </sec>
 
 <sec name="Skills" desc="">
-	<text header="Languages">Proficient in Ruby/Ruby on Rails and SQL. Prior experience with C, Java, C++, JavaScript, PHP, Python, and MATLAB.</text>
+	<text header="Languages">Ruby/Ruby on Rails, SQL, Java, C, JavaScript, Python, C++, PHP, MATLAB</text>
 	<br/>
-	<text header="Software">GNU/Linux, Mac OS X, Git, MySQL, MongoDB, Hive, and Apache Solr.</text>
+	<text header="Software">Windows, GNU/Linux, Mac OS X, Git, MySQL, MongoDB, RabbitMQ, Hive, Solr</text>
 </sec>
 
 <sec name="Education" desc="">
@@ -86,8 +87,8 @@
 	<pos value="Intelligent Switching between ZeroMQ and TCP/IP for Data Streams" date="December 2011 - March 2012">
 		<desc type="">Experimented with Unix socket programming and an alternative sockets library (ZeroMQ) to improve network throughput for data streams. Final project for M.S. degree.</desc>
 	</pos>
-	<pos value="Anisotropic Diffusion of Hyperspectral Imagery" date="March 2009 - June 2009">
-		<desc type="">Studied the effects of applying certain differential equations upon images for image segmentation using MATLAB.</desc>
+	<pos value="Anisotropic Diffusion of Hyperspectral Imagery" date="March 2009 - June 2009" skip="true">
+		<desc type="">Studied the effects of applying certain differential equations to image segmentation with MATLAB.</desc>
 	</pos>
 	<pos value="Video Tracking" date="July 2007 - September 2007">
 		<desc type="">Implemented an adaptive foreground detection algorithm for video in a group summer research project at UCLA Mathematics, using MATLAB and C++ with the OpenCV computer vision library.</desc>
