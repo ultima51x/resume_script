@@ -45,14 +45,14 @@
 	<loc value="Hewlett-Packard Company" city="San Diego, CA">
 		<pos value="Intern" date="June 2011 - September 2011">
 			<desc type="">Improved usability of HP Wall Art's internal site/CMS by implementing batch upload of large files (upwards of 50MB) and AJAX-driven user interfaces with Ruby on Rails and HTML5.</desc>
-			<desc type="">Set up an OAuth provider and implemented endpoints of a REST API for HP Wall Art, with the intention to integrate with third-party eCommerce companies.</desc>
-			<desc type="">Performed other tasks including adding new functionality to the internal site/CMS, writing tests, and fixing miscellaneous bugs.</desc>
+			<desc type="">Set up an OAuth provider and implemented endpoints for a REST API, with the intention to integrate HP Wall Art with third-party e-commerce companies.</desc>
+			<desc type="">Performed miscellaneous tasks including adding new functionality to the internal site/CMS, writing tests, refactoring, and debugging.</desc>
 		</pos>
 	</loc>
 	<!-- Zobrist -->
 	<loc value="Zobrist Consulting Group, Inc." city="Van Nuys, CA">
 		<pos value="Intern" date="June 2010 - September 2010">
-			<desc type="">Developed a fully-functional prototype of an e-commerce product search page using Apache Solr and AJAX; it supports faceted navigation, autocomplete, and spellchecking.</desc>
+			<desc type="">Developed a fully-functional prototype of an e-commerce product search page using Apache Solr and AJAX; it features faceted navigation, autocomplete, and spellchecking.</desc>
 			<desc type="">Configured Apache Solr to sensibly index and query the contents of a typical IBM WebSphere Commerce database, such that the prototype could support the features listed above.</desc>
 		</pos>
 	</loc>
@@ -67,7 +67,7 @@
 <sec name="Skills" desc="">
 	<text header="Languages">Ruby/Ruby on Rails, SQL, Java, C, JavaScript, Python, C++, PHP, MATLAB</text>
 	<br/>
-	<text header="Software">Windows, GNU/Linux, Mac OS X, Git, MySQL, MongoDB, RabbitMQ, Hive, Solr</text>
+	<text header="Software">MS Windows, GNU/Linux, Mac OS X, Git, MySQL, MongoDB, RabbitMQ, Hive, Solr</text>
 </sec>
 
 <sec name="Education" desc="">
@@ -91,7 +91,7 @@
 		<desc type="">Studied the effects of applying certain differential equations to image segmentation with MATLAB.</desc>
 	</pos>
 	<pos value="Video Tracking" date="July 2007 - September 2007">
-		<desc type="">Implemented an adaptive foreground detection algorithm for video in a group summer research project at UCLA Mathematics, using MATLAB and C++ with the OpenCV computer vision library.</desc>
+		<desc type="">Implemented an adaptive foreground detection algorithm on video in a group summer research project at UCLA Mathematics, using MATLAB and C++ with the OpenCV computer vision library.</desc>
 	</pos>
 </sec>
 
