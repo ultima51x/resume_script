@@ -1,3 +1,4 @@
+import os
 import sys
 import xml.etree.ElementTree as ET
 from datetime import date
@@ -7,6 +8,7 @@ from printers import TexPrinter
 from printers import TextPrinter
 from printers import HtmlPrinter
 from printers import DebugPrinter
+
 
 class ResumeParser:
     def __init__(self,printer):
@@ -30,12 +32,13 @@ class ResumeParser:
 
 def main():
     input_file = "./david_hwang_resume.xml"
-    basename = "david_hwang_resume_{0}".format(date.today().isoformat())
+    basedir = os.path.join(os.path.expanduser('~'),"Windows","Share")
+    basename = os.path.join(basedir,"david_hwang_resume_{0}".format(date.today().isoformat()))
 
-    text = "./output/{0}.txt".format(basename)
-    html = "./output/{0}.html".format(basename)
-    latex = "./output/{0}.tex".format(basename)
-    debug = "./output/{0}.debug.txt".format(basename)
+    text = "{0}.txt".format(basename)
+    html = "{0}.html".format(basename)
+    latex = "{0}.tex".format(basename)
+    debug = "{0}.debug.txt".format(basename)
 
     sys.stdout = open(text,'w')
     ResumeParser(TextPrinter()).read(input_file)
@@ -48,6 +51,12 @@ def main():
 
     sys.stdout = open(debug,'w')
     ResumeParser(DebugPrinter()).read(input_file)
+
+    sys.stdout = sys.__stdout__
+    call(["pdflatex","-output-directory",basedir,latex])
+
+    print "Output to {0}".format(basedir)
+    print "OK"
 
 if __name__ == "__main__":
     main()
