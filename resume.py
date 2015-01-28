@@ -32,7 +32,7 @@ class ResumeParser:
 
 def main():
     input_file = "./david_hwang_resume.xml"
-    basedir = os.path.join(os.path.expanduser('~'),"Windows","Share")
+    basedir = os.path.join(os.path.expanduser('~'),"Share")
     basename = os.path.join(basedir,"david_hwang_resume_{0}".format(date.today().isoformat()))
 
     text = "{0}.txt".format(basename)
