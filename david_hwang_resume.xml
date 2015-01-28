@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <root>
-    
+
 <name>David Hwang</name>
 <address1>4152 Verdugo Rd.</address1>
 <address2>Los Angeles, CA 90065-3821</address2>
@@ -18,7 +18,7 @@
 			<desc type="">Configured and deployed an internal configuration application using AWS OpsWorks and Chef.</desc>
 			<desc type="">Resolved performance issues such as high database cpu usage, slow queries, and high response times.</desc>
 			<desc type="">Automated retrieval of Facebook likes data from 50K users/day via Facebook Graph API.</desc>
-			<desc type="">Reworked the web sweepstakes widget code to be more modular and to use AJAX.</desc>
+			<desc type="">Reworked Smartify's web sweepstakes widget code to be more modular and to use AJAX.</desc>
 			<desc skip="true" type="">Integrated platform with email services such as CheetahMail.</desc>
 			<desc skip="true" type="">Refactored authentication logic and added authentication via Google Plus, Instagram, and Tumblr.</desc>
 		</pos>
