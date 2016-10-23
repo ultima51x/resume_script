@@ -9,6 +9,7 @@ from printers import TextPrinter
 from printers import HtmlPrinter
 from printers import DebugPrinter
 
+import settings
 
 class ResumeParser:
     def __init__(self,printer):
@@ -31,9 +32,7 @@ class ResumeParser:
         self.printer.after(elem)
 
 def main():
-    input_file = "./david_hwang_resume.xml"
-    basedir = os.path.join(os.path.expanduser('~'),"Share")
-    basename = os.path.join(basedir,"david_hwang_resume_{0}".format(date.today().isoformat()))
+    basename = os.path.join(settings.TARGET_DIR,"{0}{1}".format(settings.RESUME_NAME, date.today().isoformat()))
 
     text = "{0}.txt".format(basename)
     html = "{0}.html".format(basename)
@@ -41,21 +40,21 @@ def main():
     debug = "{0}.debug.txt".format(basename)
 
     sys.stdout = open(text,'w')
-    ResumeParser(TextPrinter()).read(input_file)
+    ResumeParser(TextPrinter()).read(settings.XML_SOURCE)
 
     sys.stdout = open(html,'w')
-    ResumeParser(HtmlPrinter()).read(input_file)
+    ResumeParser(HtmlPrinter()).read(settings.XML_SOURCE)
 
     sys.stdout = open(latex,'w')
-    ResumeParser(TexPrinter()).read(input_file)
+    ResumeParser(TexPrinter()).read(settings.XML_SOURCE)
 
     sys.stdout = open(debug,'w')
-    ResumeParser(DebugPrinter()).read(input_file)
+    ResumeParser(DebugPrinter()).read(settings.XML_SOURCE)
 
     sys.stdout = sys.__stdout__
-    call(["pdflatex","-output-directory",basedir,latex])
+    call(["pdflatex","-output-directory",settings.TARGET_DIR,latex])
 
-    print "Output to {0}".format(basedir)
+    print "Output to {0}".format(settings.TARGET_DIR)
     print "OK"
 
 if __name__ == "__main__":
