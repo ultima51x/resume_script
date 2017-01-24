@@ -27,7 +27,7 @@ class TexPrinter:
 \oddsidemargin=-0.65in
 \evensidemargin=-0.65in
 \\addtolength{\\textwidth}{1.25in}
-\\addtolength{\\textheight}{1.25in}
+\\addtolength{\\textheight}{1.55in}
 
 \\begin{document}
 \\thispagestyle{empty} % this page has no header"""
