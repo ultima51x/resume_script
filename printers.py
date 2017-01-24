@@ -23,7 +23,7 @@ class TexPrinter:
 %\pagestyle{fancy}     % set pagestyle for document
 %\\rhead{ {\it D. Hwang}\\\\{\it p. \\thepage} } % put text in header (right side)
 %\\cfoot{}                                     % the foot is empty
-\\topmargin=-0.75in % start text higher on the page
+\\topmargin=-0.85in % start text higher on the page
 \oddsidemargin=-0.65in
 \evensidemargin=-0.65in
 \\addtolength{\\textwidth}{1.25in}
