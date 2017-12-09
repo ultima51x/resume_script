@@ -54,8 +54,8 @@ def main():
     sys.stdout = sys.__stdout__
     call(["pdflatex","-output-directory",settings.TARGET_DIR,latex])
 
-    print "Output to {0}".format(settings.TARGET_DIR)
-    print "OK"
+    print("Output to {0}".format(settings.TARGET_DIR))
+    print("OK")
 
 if __name__ == "__main__":
     main()
