@@ -1,8 +1,17 @@
+from bs4 import BeautifulSoup
+from jinja2 import Environment, FileSystemLoader, contextfilter
+
+
+@contextfilter
+def call_macro_by_name(context, macro_name, *args, **kwargs):
+    return context.vars[macro_name](*args, **kwargs)
+
+
 class TexPrinter:
     def __init__(self):
         pass
 
-    def before(self,elem):
+    def before(self, elem):
         name = elem.tag
         attrs = elem.attrib
         data = elem.text
@@ -31,8 +40,10 @@ class TexPrinter:
 
 \\begin{document}
 \\thispagestyle{empty} % this page has no header""")
-        elif name == "name": print("\\address{\\bf\\LARGE", end=' ')
-        elif name == "phone": print("\\address{", end=' ')
+        elif name == "name":
+            print("\\address{\\bf\\LARGE", end=' ')
+        elif name == "phone":
+            print("\\address{", end=' ')
         elif name == "sec":
             print("\\section{" + attrs["name"].upper() + "}")
             if attrs["desc"] == "": pass
@@ -54,14 +65,17 @@ class TexPrinter:
         elif name == "br":
             print("\\\\")
 
-        if data is None or data[0] == '\n' or data[0] == "\t" or data[0] == ' ': pass
-        else: print(data, end=' ')
+        if data is None or data[0] == '\n' or data[0] == "\t" or data[0] == ' ':
+            pass
+        else:
+            print(data, end=' ')
 
-    def after(self,elem):
+    def after(self, elem):
         name = elem.tag
 
-        if name in ("name","address1","phone","email"): print("\\\\", end=' ')
-        elif name in ("address2","website"):
+        if name in ("name", "address1", "phone", "email"):
+            print("\\\\", end=' ')
+        elif name in ("address2", "website"):
             print("}")
             if name == "website": print("\n\n\\begin{resume}")
         elif name == "pos": print("\\end{itemize}\n\\vspace {-10pt}")
@@ -69,76 +83,24 @@ class TexPrinter:
 \\end{document}""")
         elif name == "desc": print()
 
+
 class TextPrinter:
-    def before(self, elem):
-        name = elem.tag
-        attrs = elem.attrib
-        data = elem.text
-
-        if name == "sec":
-            print("----------------------------------")
-            print(attrs["name"].upper())
-            print("----------------------------------")
-            print()
-            if attrs["desc"] == "": pass
-            else: print(attrs["desc"])
-        elif name == "loc":
-            print(attrs["value"].upper())
-            print(attrs["city"])
-            print()
-        elif name == "text":
-            print(attrs["header"] + "\t", end=' ')
-        elif name == "pos":
-            print(attrs["value"])
-            print("(" + attrs["date"] + ")", end=' ')
-            print()
-        elif name == "desc": print("*", end=' ')
-
-        if data is None or data[0] == '\n' or data[0] == "\t" or data[0] == ' ': pass
-        else: print(data)
-
-    def after(self,elem):
-        #extra line after these sections are over
-        if elem.tag in ("sec","pos","name","phone","website"): print()
+    def render(self, node):
+        env = Environment(loader=FileSystemLoader('templates'),
+                          lstrip_blocks=True,
+                          trim_blocks=True)
+        env.filters['macrobyname'] = call_macro_by_name
+        template = env.get_template('base.txt')
+        return template.render(node=node)
 
 
 class HtmlPrinter:
-    def before(self, elem):
-        name = elem.tag
-        attrs = elem.attrib
-        data = elem.text
-
-        if name == "name": print("<h1>", end=' ')
-        elif name == "sec":
-            print("<h2>" + attrs["name"] + "</h2>")
-            if attrs["desc"] == "": pass
-            else: print("<p>" + attrs["desc"] + "</p>")
-        elif name == "loc":
-            print("<h3>" + attrs["value"], "-", attrs["city"] + "</h3>")
-        elif name == "pos":
-            print("<h4>" + attrs["value"], "(" + attrs["date"] + ")" "</h4>")
-            print("<ul>")
-        elif name == "desc": print("<li>", end=' ')
-        elif name == "text": print("<strong>" + attrs["header"] + ":</strong>", end=' ')
-        elif name == "br": print("<br/>")
-
-        if data is None or data[0] == '\n' or data[0] == "\t" or data[0] == ' ': pass
-        else: print(data, end=' ')
-
-    def after(self, elem):
-        name = elem.tag
-
-        if name == "name": print("</h1>")
-        elif name == "website": print("</p>")
-        elif name in ("address1","address2","website","phone","email"):
-            print("<br/>")
-            if name in ("phone"): print("<br/>")
-        elif name == "pos": print("</ul>")
-        elif name == "desc": print("</li>")
-
-class DebugPrinter:
-    def before(self, elem):
-        print("before", elem.tag, elem.attrib, elem.text)
-
-    def after(self, elem):
-        print("after", elem.tag, elem.attrib, elem.text)
+    def render(self, node):
+        env = Environment(loader=FileSystemLoader('templates'),
+                          lstrip_blocks=True,
+                          trim_blocks=True)
+        env.filters['macrobyname'] = call_macro_by_name
+        template = env.get_template('base.html')
+        markup_string = template.render(node=node)
+        soup = BeautifulSoup(markup_string, 'html.parser')
+        return soup.prettify()

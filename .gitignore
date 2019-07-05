@@ -1,2 +1,4 @@
 *.pyc
 settings.py
+env
+.mypy_cache

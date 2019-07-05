@@ -1,0 +1,53 @@
+{% macro printchildren(node) %}
+{% for c in node.children() %}
+{{ c.tag|macrobyname(c) }}
+{% endfor %}
+{% endmacro %}
+
+{% macro root(node) %}
+{{printchildren(node)}}
+{%- endmacro %}
+
+{% macro header(node) %}
+{{node.name}}
+
+{{node.address1}}
+{{node.address2}}
+{{node.phone}}
+
+{{node.email}}
+{% endmacro -%}
+
+{% macro sec(node) %}
+----------------------------------
+{{node.name|upper}}
+----------------------------------
+
+{{printchildren(node)}}
+{%- endmacro -%}
+
+{% macro pos(node) %}
+{{node.name}}
+({{node.date}})
+{{printchildren(node)}}
+{%- endmacro %}
+
+{% macro desc(node) %}
+* {{node.text}}
+{%- endmacro %}
+
+{% macro loc(node) %}
+{{node.name}}
+{{node.city}}
+
+{{printchildren(node)}}
+{%- endmacro %}
+
+{% macro list(node) %}
+{{node.title}}
+{{printchildren(node)}}
+{%- endmacro %}
+
+{% macro entry(node) %}
+* {{node.text}}
+{%- endmacro %}

@@ -1,0 +1,57 @@
+{% macro printchildren(node) %}
+{% for c in node.children() %}
+  {{ c.tag|macrobyname(c) }}
+{% endfor %}
+{%- endmacro %}
+
+{% macro root(node) %}
+<html>
+  <head>
+  </head>
+  <body>
+    {{printchildren(node)|indent(width=2)}}
+  </body>
+</html>
+{%- endmacro %}
+
+{% macro header(node) %}
+<h1>{{node.name}}</h1>
+<div>
+  {{node.address1}}<br/>
+  {{node.address2}}<br/>
+  {{node.phone}}<br/>
+  {{node.email}}
+</div>
+{%- endmacro %}
+
+{% macro sec(node) %}
+<h2>{{node.name}}</h2>
+{{printchildren(node)}}
+{%- endmacro %}
+
+{% macro pos(node) %}
+<h4>{{node.name}} ({{node.date}})</h4>
+<ul>
+  {{printchildren(node)|indent(width=2)}}
+</ul>
+{%- endmacro %}
+
+{% macro desc(node) %}
+<li>{{node.text}}</li>
+{%- endmacro %}
+
+{% macro loc(node) %}
+<h3>{{node.name}} - {{node.city}}</h3>
+{{printchildren(node)}}
+{%- endmacro %}
+
+{% macro list(node) %}
+<h5>{{node.title}}</h5>
+<ul>
+  {{printchildren(node)|indent(width=2)}}
+</ul>
+{%- endmacro %}
+
+{% macro entry(node) %}
+<li>{{node.text}}</li>
+{%- endmacro %}

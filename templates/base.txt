@@ -1,0 +1,2 @@
+{% from 'elements.txt' import root, header, sec, pos, desc, loc, list, entry %}
+{{ node.tag|macrobyname(node) }}
