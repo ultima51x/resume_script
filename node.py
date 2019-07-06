@@ -25,6 +25,8 @@ def xmlelem_to_node(elem: Element):
         n = EntryList(elem)
     elif t == 'entry':
         n = Entry(elem)
+    elif t == 'body':
+        n = Node(elem)
     else:
         n = Node(elem)
 

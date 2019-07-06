@@ -18,6 +18,10 @@
 {{node.email}}
 {% endmacro -%}
 
+{% macro body(node) %}
+{{printchildren(node)}}
+{%- endmacro %}
+
 {% macro sec(node) %}
 ----------------------------------
 {{node.name|upper}}
