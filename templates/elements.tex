@@ -67,9 +67,14 @@
 % POS
 \BLOCK{macro pos(node)}
 {\it \VAR{node.name}}\hfill \VAR{node.date}
+\BLOCK{if node.description|length > 0}
+\\\VAR{node.description}\\
+\BLOCK{-endif-}
+\BLOCK{if node.children()|length > 0}
 \begin{itemize} \itemsep -2pt
 \VAR{ printchildren(node) -}
 \end{itemize}
+\BLOCK{-endif-}
 \vspace {-10pt}
 \BLOCK{-endmacro}
 

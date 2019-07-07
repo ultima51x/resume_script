@@ -92,6 +92,7 @@ class Position(Node):
         super().__init__(node)
         self.name = self.get('value')
         self.date = self.get('date')
+        self.description = self.get('description')
 
 
 class Description(Node):
