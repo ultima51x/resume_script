@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <root>
 
-<name>Fake Name</name>
-<address1>123 Fake Address</address1>
-<address2>Fake City, CA</address2>
-<phone>Fake Number</phone>
-<email>fakeemail@fake</email>
-<website></website>
+<header
+	name="Fake Name"
+	address1="123 Main St."
+	address2="Fake City, ST 11111-2222"
+	phone="(123) 456-7890"
+	email="fake@email.com"
+	level="long short"
+/>
 
-<!--- This is a guide     0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567 -->
-<sec name="Experience" desc="">
-	<!-- Fake Company -->
-	<loc value="Fake Company" city="Fake City 1, CA">
-		<pos value="Software Engineer" date="August 2012 - Present">
-			<desc type="">Resume Point 1</desc>
-			<desc skip="true" type="">This is hidden.</desc>
-			<desc type="">Resume Point 2</desc>
-			<desc skip="true" type="">This is also hidden.</desc>
-			<desc type="">Resume Point 3</desc>
+<body level="long short">
+<sec name="Experience" level="long short">
+	<loc value="Company 1" city="First, ST" level="long short">
+		<pos value="First Position" date="February 2017 - Present" level="long short">
+			<desc level="short">I show up in short mode.</desc>
+			<desc level="long">I show up on long mode.</desc>
+			<desc level="short long">I show up on both modes.</desc>
 		</pos>
 	</loc>
-	<!-- Hello World -->
-	<loc value="Hello World" city="Metropolis, NY">
-		<pos value="Programmer" date="September 2010 - August 2012">
-			<desc type="">Resume Point 1</desc>
-			<desc type="">Resume Point 2</desc>
-			<desc type="">Resume Point 3</desc>
+	<loc value="Company 2" city="Second, ST" level="long short">
+		<pos value="First Position" date="February 2015 - January 2017" level="long short">
+			<desc level="short">I show up in short mode.</desc>
+			<desc level="long">I show up on long mode.</desc>
+			<desc level="short long">I show up on both modes.</desc>
+		</pos>
+		<pos value="Second Position" date="March 2014 - January 2015" level="long short">
+			<desc level="short">I show up in short mode.</desc>
+			<desc level="long">I show up on long mode.</desc>
+			<desc level="short long">I show up on both modes.</desc>
+		</pos>
+		<pos value="Hidden Job" date="March 2012 - January 2013" level="short">
+			<desc level="short">I show up in short mode.</desc>
+			<desc level="long">I show up on long mode.</desc>
+			<desc level="short long">I show up on both modes.</desc>
 		</pos>
 	</loc>
-	<!-- Something -->
-	<loc value="Something" city="Los Angeles, CA">
-		<pos value="Reader" date="January 2007 - June 2007">
-			<desc type="">I did something.</desc>
-		</pos>
-	</loc>
-</sec>
-
-<sec name="Skills" desc="">
-	<text header="Languages">Ruby/Ruby on Rails, SQL, Java, C, JavaScript, Python, C++, PHP, MATLAB</text>
-	<br/>
-	<text header="Software">MS Windows, GNU/Linux, Mac OS X, Git, MySQL, MongoDB, RabbitMQ, Hive, Solr</text>
-</sec>
-
-<sec name="Education" desc="">
-	<loc value="Some Awesome University" city="Awesome, CA">
-		<pos value="M.S., Computer Science" date="September 2010 - March 2012">
-			<desc type="">Overall GPA: 3.522.</desc>
-			<desc type="">Relevant Coursework: Course 1, Course 2, Course 3</desc>
-		</pos>
-		<pos value="B.S., Mathematics" date="September 2005 - June 2009">
-			<desc type="">Overall GPA: 3.512.</desc>
-			<desc type="">Relevant Coursework: Course A, Course B, Course C, Cource D</desc>
+	<loc value="Only In Long Mode" city="Third, ST" level="long">
+		<pos value="First Position" date="February 2017 - Present" level="long short">
+			<desc level="short">I show up in short mode.</desc>
+			<desc level="long">I show up on long mode.</desc>
+			<desc level="short long">I show up on both modes.</desc>
 		</pos>
 	</loc>
 </sec>
 
-<sec name="Projects" desc="">
-	<pos value="Project 1" date="December 2011 - March 2012">
-		<desc type="">Description of project 1.</desc>
-	</pos>
-	<pos value="Project 2" date="March 2009 - June 2009" skip="true">
-		<desc type="">Description of project 2. Another point a.</desc>
-		<desc type="">Description of project 2. Another point b.</desc>
-	</pos>
+<sec name="Skills" level="long short">
+	<list title="Languages" level="long short">
+		<entry level="long">Ruby/Ruby on Rails</entry>
+		<entry level="long short">SQL</entry>
+		<entry level="long short">JavaScript</entry>
+		<entry level="long short">Java</entry>
+		<entry level="long short">PHP</entry>
+		<entry level="short">MATLAB</entry>
+	</list>
+	<list title="Software" level="long short">
+		<entry level="long">Microsoft Windows</entry>
+		<entry level="long short">Mac OS X</entry>
+		<entry level="long short">GNU/Linux</entry>
+		<entry level="long short">Git</entry>
+		<entry level="long short">Vim</entry>
+		<entry level="long">MongoDB</entry>
+		<entry level="long">RabbitMQ</entry>
+		<entry level="long">Hive</entry>
+	</list>
 </sec>
-
+</body>
 </root>
-
