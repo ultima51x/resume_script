@@ -1,5 +1,5 @@
+import argparse
 import os
-import sys
 from datetime import date
 from subprocess import call
 
@@ -13,37 +13,45 @@ class ResumeParser:
         self.printer = printer
         pass
 
-    def render(self, filename):
-        return self.printer.render(tree_from_filename(filename))
+    def read_from(self, filename, longmode):
+        return self.printer.render(tree_from_filename(filename, longmode))
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        description='Output a resume to different formats.')
+    parser.add_argument('-l',
+                        '--long',
+                        dest='longmode',
+                        action='store_true',
+                        default=False,
+                        help='sum the integers (default: find the max)')
+    args = parser.parse_args()
+
+    longmode = args.longmode
+
     basename = os.path.join(
         settings.TARGET_DIR, "{0}{1}".format(settings.RESUME_NAME,
                                              date.today().isoformat()))
+    source = settings.XML_SOURCE
 
     text = "{0}.txt".format(basename)
+    with open(text, 'w') as f:
+        output = ResumeParser(TextPrinter()).read_from(source, longmode)
+        f.write(output)
+
     html = "{0}.html".format(basename)
+    with open(html, 'w') as f:
+        output = ResumeParser(HtmlPrinter()).read_from(source, longmode)
+        f.write(output)
+
     latex = "{0}.tex".format(basename)
-    # debug = "{0}.debug.txt".format(basename)
+    with open(latex, 'w') as f:
+        output = ResumeParser(TexPrinter()).read_from(source, longmode)
+        f.write(output)
+    call(["pdflatex", "-output-directory", settings.TARGET_DIR, latex])
 
-    sys.stdout = open(text, 'w')
-    output = ResumeParser(TextPrinter()).render(settings.XML_SOURCE)
-    print(output)
-
-    sys.stdout = open(html, 'w')
-    output = ResumeParser(HtmlPrinter()).render(settings.XML_SOURCE)
-    print(output)
-
-    sys.stdout = open(latex, 'w')
-    output = ResumeParser(TexPrinter()).render(settings.XML_SOURCE)
-    print(output)
-
-    sys.stdout = sys.__stdout__
-    # call(["pdflatex", "-output-directory", settings.TARGET_DIR, latex])
-
-    print("Output to {0}".format(settings.TARGET_DIR))
-    print("OK")
+    print("Outputted to {0}".format(settings.TARGET_DIR))
 
 
 if __name__ == "__main__":

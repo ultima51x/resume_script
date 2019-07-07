@@ -2,7 +2,8 @@ from typing import Dict, List
 from xml.etree.ElementTree import Element, parse
 
 
-def tree_from_filename(fname: str):
+def tree_from_filename(fname: str, longmode: bool):
+    Node.long_mode = longmode
     tree = parse(fname)
     return Node(tree.getroot())
 
@@ -34,6 +35,8 @@ def xmlelem_to_node(elem: Element):
 
 
 class Node:
+    long_mode: bool = False
+
     def __init__(self, node: Element):
         self.tag = node.tag
         self._attrs: Dict[str, str] = node.attrib
@@ -50,8 +53,15 @@ class Node:
     def get(self, key: str) -> str:
         return self._attrs.get(key, '')
 
+    def shown(self) -> bool:
+        if self.long_mode:
+            return self.in_long()
+        else:
+            return self.in_short()
+
     def children(self) -> List['Node']:
-        return [xmlelem_to_node(c) for c in self._children]
+        parsed = [xmlelem_to_node(c) for c in self._children]
+        return [c for c in parsed if c.shown()]
 
 
 class Header(Node):
