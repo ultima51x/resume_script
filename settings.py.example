@@ -1,3 +1,0 @@
-TARGET_DIR = "./resume_output"
-XML_SOURCE = "./resume_example.xml"
-RESUME_NAME = "resume_"

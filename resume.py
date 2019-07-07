@@ -3,7 +3,6 @@ import os
 from datetime import date
 from subprocess import call
 
-import settings
 from node import tree_from_filename
 from printers import HtmlPrinter, TexPrinter, TextPrinter
 
@@ -17,23 +16,56 @@ class ResumeParser:
         return self.printer.render(tree_from_filename(filename, longmode))
 
 
-def main():
+def prog():
+    defaults = {
+        'outdir': './outdir',
+        'fnameprefix': 'resume_',
+    }
+
     parser = argparse.ArgumentParser(
-        description='Output a resume to different formats.')
+        description='Output resume data (in xml format) to different formats.')
+    parser.add_argument('source',
+                        action='store',
+                        metavar='SOURCEXML',
+                        help="source xml file of resume data")
     parser.add_argument('-l',
                         '--long',
                         dest='longmode',
                         action='store_true',
                         default=False,
                         help='sum the integers (default: find the max)')
-    args = parser.parse_args()
+    parser.add_argument('--out',
+                        dest='target_dir',
+                        action='store',
+                        metavar='OUTDIR',
+                        default=defaults['outdir'],
+                        help="directory to output to (default: {0})".format(
+                            defaults['outdir']))
+    parser.add_argument(
+        '--fnameprefix',
+        dest='fnameprefix',
+        action='store',
+        metavar='PREFIX',
+        default=defaults['fnameprefix'],
+        help="start of the filename of the files (default: {0})".format(
+            defaults['fnameprefix']))
 
+    return parser
+
+
+def main():
+    args = prog().parse_args()
+
+    source = args.source
     longmode = args.longmode
+    targetdir = args.target_dir
+    fnameprefix = args.fnameprefix
+    if not os.path.exists(targetdir):
+        os.makedirs(targetdir)
 
     basename = os.path.join(
-        settings.TARGET_DIR, "{0}{1}".format(settings.RESUME_NAME,
-                                             date.today().isoformat()))
-    source = settings.XML_SOURCE
+        targetdir, "{0}{1}".format(fnameprefix,
+                                   date.today().isoformat()))
 
     text = "{0}.txt".format(basename)
     with open(text, 'w') as f:
@@ -49,9 +81,9 @@ def main():
     with open(latex, 'w') as f:
         output = ResumeParser(TexPrinter()).read_from(source, longmode)
         f.write(output)
-    call(["pdflatex", "-output-directory", settings.TARGET_DIR, latex])
+    call(["pdflatex", "-output-directory", targetdir, latex])
 
-    print("Outputted to {0}".format(settings.TARGET_DIR))
+    print("Outputted to {0}".format(targetdir))
 
 
 if __name__ == "__main__":

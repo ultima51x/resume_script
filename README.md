@@ -5,15 +5,20 @@ This is a python script which is able to read the contents of a resume in an XML
 A sample resume file is included in `resume_example.xml`.
 
 ## Requirements
-* Python 3
-* latex and pdflatex
+* Python 3.7
+* `latex` and `pdflatex`
 * The resume latex class located http://www.ctan.org/tex-archive/macros/latex/contrib/resume/res.cls
 
-## Configuration
-Three configuration variables must be set in settings.py.  You can make a copy from settings.py.example
-* `TARGET_DIR` is where the result files will be output.  It should already exist.
-* `XML_SOURCE` is the location of the xml file with the resume.
-* `RESUME_NAME` is the name of the resulting files.
+## Installation
+
+* Create a new virtual env
+```
+python -m venv env
+source env/bin/activate
+```
+* Install deps from requirements.txt: `pip install -r requirements.txt`
+
 
 ## Instructions
-To run this, `python /location/of/file/resume_script/resume.py`
+To run this within the virtual environment, `python resume.py resume_example.xml`.
+Run `python resume.py -h` for more help.
