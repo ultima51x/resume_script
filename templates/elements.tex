@@ -11,6 +11,7 @@
 % LaTeX file for resume
 % This file uses the resume document class (res.cls)
 \documentclass[overlapped]{res}
+\usepackage{enumitem}
 \newsectionwidth{0pt}  % So the text is not indented under section headings
 
 \topmargin=-0.85in % start text higher on the page
@@ -44,7 +45,7 @@
 % SECTION
 \BLOCK{macro sec(node)}
 \section{\underline{\VAR{node.name|upper}}}
-\VAR{printchildren(node)}
+\VAR{printchildren(node) -}
 \BLOCK{-endmacro}
 
 
@@ -60,10 +61,10 @@
 {\it \VAR{node.name}}\hfill \VAR{node.date}
 \BLOCK{if node.children()|length > 0}
 \BLOCK{set listtype = ("itemize" if node.listtype == "bullet" else "description")}
-\begin{\VAR{listtype}} \itemsep -2pt
+\begin{\VAR{listtype}}[noitemsep,topsep=0pt]
 \VAR{ printchildren(node) -}
 \end{\VAR{listtype}}
-\vspace{-10pt}
+\vskip -10pt
 \BLOCK{-endif-}
 \BLOCK{-endmacro}
 
@@ -76,5 +77,8 @@
 
 % LIST
 \BLOCK{macro list(node)}
-{\bf \VAR{node.title}:} \VAR{node.children()|map(attribute='text')|join(', ')}\\
+\begin{description}[noitemsep,topsep=-1pt]
+\setlength{\itemindent}{-25pt}
+\item {\bf \VAR{node.title}:} \VAR{node.children()|map(attribute='text')|join(', ')}
+\end{description}
 \BLOCK{-endmacro}
