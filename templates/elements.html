@@ -35,9 +35,6 @@
 
 {% macro pos(node) %}
 <h4>{{node.name}} ({{node.date}})</h4>
-{% if node.description|length > 0 %}
-<div>{{node.description}}</div>
-{% endif %}
 <ul>
   {{printchildren(node)|indent(width=2)}}
 </ul>

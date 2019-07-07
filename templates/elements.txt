@@ -33,9 +33,6 @@
 {% macro pos(node) %}
 {{node.name}}
 ({{node.date}})
-{% if node.description|length > 0 %}
-{{ node.description }}
-{%- endif -%}
 {{printchildren(node)}}
 {%- endmacro %}
 
