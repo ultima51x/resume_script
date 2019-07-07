@@ -8,8 +8,22 @@ def call_macro_by_name(context, macro_name, *args, **kwargs):
 
 
 class TexPrinter:
-    def __init__(self):
-        pass
+    def render(self, node):
+        env = Environment(loader=FileSystemLoader('templates'),
+                          block_start_string='\BLOCK{',
+                          block_end_string='}',
+                          variable_start_string='\VAR{',
+                          variable_end_string='}',
+                          comment_start_string='\#{',
+                          comment_end_string='}',
+                          line_statement_prefix='%%',
+                          line_comment_prefix='%#',
+                          trim_blocks=True,
+                          lstrip_blocks=True,
+                          autoescape=False)
+        env.filters['macrobyname'] = call_macro_by_name
+        template = env.get_template('base.tex')
+        return template.render(node=node)
 
     def before(self, elem):
         name = elem.tag

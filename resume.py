@@ -24,7 +24,7 @@ def main():
 
     text = "{0}.txt".format(basename)
     html = "{0}.html".format(basename)
-    # latex = "{0}.tex".format(basename)
+    latex = "{0}.tex".format(basename)
     # debug = "{0}.debug.txt".format(basename)
 
     sys.stdout = open(text, 'w')
@@ -35,11 +35,9 @@ def main():
     output = ResumeParser(HtmlPrinter()).render(settings.XML_SOURCE)
     print(output)
 
-    # sys.stdout = open(latex, 'w')
-    # ResumeParser(TexPrinter()).read(settings.XML_SOURCE)
-
-    # sys.stdout = open(debug, 'w')
-    # ResumeParser(DebugPrinter()).read(settings.XML_SOURCE)
+    sys.stdout = open(latex, 'w')
+    output = ResumeParser(TexPrinter()).render(settings.XML_SOURCE)
+    print(output)
 
     sys.stdout = sys.__stdout__
     # call(["pdflatex", "-output-directory", settings.TARGET_DIR, latex])
