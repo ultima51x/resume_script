@@ -2,7 +2,7 @@
 {% for c in node.children() %}
 {{ c.tag|macrobyname(c) }}
 {% endfor %}
-{% endmacro %}
+{%- endmacro %}
 
 {% macro root(node) %}
 {{printchildren(node)}}
@@ -16,7 +16,7 @@
 {{node.phone}}
 
 {{node.email}}
-{% endmacro -%}
+{% endmacro %}
 
 {% macro body(node) %}
 {{printchildren(node)}}
@@ -28,7 +28,7 @@
 ----------------------------------
 
 {{printchildren(node)}}
-{%- endmacro -%}
+{%- endmacro %}
 
 {% macro pos(node) %}
 {{node.name}}
@@ -41,7 +41,7 @@
 {%- endmacro %}
 
 {% macro loc(node) %}
-{{node.name}}
+{{node.name|upper}}
 {{node.city}}
 
 {{printchildren(node)}}
