@@ -92,7 +92,10 @@ class Position(Node):
         super().__init__(node)
         self.name = self.get('value')
         self.date = self.get('date')
-        self.description = self.get('description')
+        if self.get('listtype') == 'paragraph':
+            self.listtype = 'paragraph'
+        else:
+            self.listtype = 'bullet'
 
 
 class Description(Node):

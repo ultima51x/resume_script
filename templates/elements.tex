@@ -43,7 +43,7 @@
 
 % SECTION
 \BLOCK{macro sec(node)}
-\section{\VAR{node.name|upper}}
+\section{\underline{\VAR{node.name|upper}}}
 \VAR{printchildren(node)}
 \BLOCK{-endmacro}
 
@@ -58,12 +58,12 @@
 % POS
 \BLOCK{macro pos(node)}
 {\it \VAR{node.name}}\hfill \VAR{node.date}
-\BLOCK{-if node.description|length > 0-}\\\VAR{node.description}\BLOCK{-endif-}
 \BLOCK{if node.children()|length > 0}
-\begin{itemize} \itemsep -2pt
+\BLOCK{set listtype = ("itemize" if node.listtype == "bullet" else "description")}
+\begin{\VAR{listtype}} \itemsep -2pt
 \VAR{ printchildren(node) -}
-\end{itemize}
-\vspace {-10pt}
+\end{\VAR{listtype}}
+\vspace{-10pt}
 \BLOCK{-endif-}
 \BLOCK{-endmacro}
 
@@ -76,5 +76,5 @@
 
 % LIST
 \BLOCK{macro list(node)}
-{\bf \VAR{node.title}:} \VAR{node.children()|map(attribute='text')|join(', ')}
+{\bf \VAR{node.title}:} \VAR{node.children()|map(attribute='text')|join(', ')}\\
 \BLOCK{-endmacro}

@@ -35,7 +35,10 @@
 			<desc level="long">I show up on long mode.</desc>
 			<desc level="short long">I show up on both modes.</desc>
 		</pos>
-		<pos value="Position without bullets" date="February 2015 - January 2017" level="long short" description="This is a description."/>
+		<pos value="Position without bullets" date="February 2015 - January 2017" level="long short" listtype="paragraph">
+			<desc level="short">I show up in short mode.</desc>
+			<desc level="long">I show up on long mode.</desc>
+		</pos>
 	</loc>
 	<loc value="Only In Long Mode" city="Third, ST" level="long">
 		<pos value="First Position" date="February 2017 - Present" level="long short">
@@ -66,5 +69,6 @@
 		<entry level="long">Hive</entry>
 	</list>
 </sec>
+<sec name="An Empty Section" level="long short"></sec>
 </body>
 </root>
