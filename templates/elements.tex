@@ -9,16 +9,18 @@
 % ROOT
 \BLOCK{macro root(node)}
 % LaTeX file for resume
-% This file uses the resume document class (res.cls)
-\documentclass[overlapped]{res}
+\documentclass[letterpaper,10pt]{article}
+\usepackage[margin=0.35in,nohead,nofoot]{geometry}
+\usepackage{titlesec}
 \usepackage{enumitem}
-\newsectionwidth{0pt}  % So the text is not indented under section headings
-
-\topmargin=-0.85in % start text higher on the page
-\oddsidemargin=-0.65in
-\evensidemargin=-0.65in
-\addtolength{\textwidth}{1.25in}
-\addtolength{\textheight}{1.55in}
+\usepackage{multicol}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}
+  {\normalfont\fontsize{10}{15}\bfseries}{\thesection}{1em}{}
+\titlespacing\section{0pt}{3pt plus 2pt minus 2pt}{3pt plus 2pt minus 2pt}
+\setitemize[0]{leftmargin=20pt,itemindent=0pt,noitemsep,topsep=0pt}
+\setdescription[0]{leftmargin=0pt,itemindent=0pt,noitemsep,topsep=-1pt}
 
 \begin{document}
 \VAR{printchildren(node)-}
@@ -28,23 +30,21 @@
 
 % HEADER
 \BLOCK{macro header(node)}
-\thispagestyle{empty} % this page has no header
-\address{\bf\LARGE \VAR{node.name} \\ \VAR{node.address1} \\ \VAR{node.address2} }
-\address{ \VAR{node.phone} \\ \VAR{node.email} \\ }
+{\bf\LARGE \VAR{node.name}}\hfill \VAR{node.phone}\\
+\VAR{node.address1}\hfill \VAR{node.email}\\
+\VAR{node.address2}
 \BLOCK{-endmacro}
 
 
 % BODY
 \BLOCK{macro body(node)}
-\begin{resume}
 \VAR{printchildren(node)-}
-\end{resume}
 \BLOCK{-endmacro}
 
 
 % SECTION
 \BLOCK{macro sec(node)}
-\section{\underline{\VAR{node.name|upper}}}
+\section*{\underline{\VAR{node.name|upper}}}
 \VAR{printchildren(node) -}
 \BLOCK{-endmacro}
 
@@ -61,11 +61,10 @@
 {\it \VAR{node.name}}\hfill \VAR{node.date}
 \BLOCK{if node.children()|length > 0}
 \BLOCK{set listtype = ("itemize" if node.listtype == "bullet" else "description")}
-\begin{\VAR{listtype}}[noitemsep,topsep=0pt]
+\begin{\VAR{listtype}}
 \VAR{ printchildren(node) -}
 \end{\VAR{listtype}}
 \BLOCK{-endif-}
-\vskip -10pt
 \BLOCK{-endmacro}
 
 
@@ -77,8 +76,7 @@
 
 % LIST
 \BLOCK{macro list(node)}
-\begin{description}[noitemsep,topsep=-1pt]
-\setlength{\itemindent}{-25pt}
+\begin{description}
 \item {\bf \VAR{node.title}:} \VAR{node.children()|map(attribute='text')|join(', ')}
 \end{description}
 \BLOCK{-endmacro}
