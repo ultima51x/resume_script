@@ -59,3 +59,8 @@
 {% macro entry(node) %}
 <li>{{node.text}}</li>
 {%- endmacro %}
+
+{% macro edu(node) %}
+<h3>{{node.school}}</h4>
+<h4>{{node.degree}} ({{node.date}})</h3>
+{%- endmacro %}

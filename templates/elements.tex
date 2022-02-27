@@ -79,3 +79,11 @@
 \item {\bf \VAR{node.title}:} \VAR{node.children()|map(attribute='text')|join(', ')}
 \end{description}
 \BLOCK{-endmacro}
+
+
+% EDUCATION
+\BLOCK{macro edu(node)}
+\begin{description}
+\item {\bf \VAR{node.degree}}. \VAR{node.school}.\hfill \VAR{node.date}
+\end{description}
+\BLOCK{-endmacro}

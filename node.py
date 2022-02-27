@@ -28,6 +28,8 @@ def xmlelem_to_node(elem: Element):
         n = Entry(elem)
     elif t == "body":
         n = Node(elem)
+    elif t == "edu":
+        n = Education(elem)
     else:
         n = Node(elem)
 
@@ -107,6 +109,14 @@ class EntryList(Node):
     def __init__(self, node):
         super().__init__(node)
         self.title = self.get("title")
+
+
+class Education(Node):
+    def __init__(self, node):
+        super().__init__(node)
+        self.degree = self.get("degree")
+        self.school = self.get("school")
+        self.date = self.get("date")
 
 
 class Entry(Node):

@@ -2,3 +2,4 @@
 settings.py
 env
 .mypy_cache
+outdir/

@@ -55,3 +55,9 @@
 {% macro entry(node) %}
 * {{node.text}}
 {%- endmacro %}
+
+{% macro edu(node) %}
+{{node.school|upper}}
+{{node.degree}}
+{{node.date}}
+{% endmacro %}
