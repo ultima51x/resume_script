@@ -13,6 +13,8 @@ A primary feature is the idea of levels. I've had trouble with limiting a resume
 * Python 3.7
 * `latex` and `pdflatex`
 * The resume latex class located http://www.ctan.org/tex-archive/macros/latex/contrib/resume/res.cls
+  * Copy to the location described in https://tex.stackexchange.com/a/1138
+* Might require packages.  Install using tlmgr: https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages
 
 ## Installation
 
